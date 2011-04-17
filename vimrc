@@ -141,6 +141,10 @@ runtime! macros/matchit.vim
 " http://www.yolinux.com/TUTORIALS/LinuxTutorialAdvanced_vi.html
 " Hide abandon buffers in order to not lose undo history.
 set hid
+
+" Show (partial) command in the status line
+set showcmd
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
