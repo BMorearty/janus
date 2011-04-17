@@ -138,6 +138,9 @@ let macvim_hig_shift_movement = 1
 " % to bounce from do to end etc.
 runtime! macros/matchit.vim
 
+" http://www.yolinux.com/TUTORIALS/LinuxTutorialAdvanced_vi.html
+" Hide abandon buffers in order to not lose undo history.
+set hid
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
