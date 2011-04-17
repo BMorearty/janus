@@ -4,9 +4,14 @@ if has("gui_macvim")
   set fuoptions=maxhorz,maxvert
 
   " Command-T for CommandT
-  macmenu &File.New\ Tab key=<D-T>
-  map <D-t> :CommandT<CR>
-  imap <D-t> <Esc>:CommandT<CR>
+  " BMorearty reversed the meaning of Cmt+T and Cmt+Shift+T by commenting out
+  " these 3 lines and adding the 3 lines below.
+  " macmenu &File.New\ Tab key=<D-T>
+  " map <D-t> :CommandT<CR>
+  " imap <D-t> <Esc>:CommandT<CR>
+  macmenu &File.Open\ Tab\.\.\. key=<nop>
+  map <D-T> :CommandT<CR>
+  imap <D-T> <Esc>:CommandT<CR>
 
   " Command-Return for fullscreen
   macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
