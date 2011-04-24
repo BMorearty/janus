@@ -66,6 +66,9 @@ if has("gui_macvim")
   imap <Leader>= <Esc> <C-w>=
 endif
 
+" Don't beep
+set visualbell
+
 " Start without the toolbar
 set guioptions-=T
 
