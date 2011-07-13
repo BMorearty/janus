@@ -148,6 +148,31 @@ set hid
 " Show (partial) command in the status line
 set showcmd
 
+" ------- BMorearty: from http://vimzone.pixelblaster.ro/content/using-nerdtree-buffers-and-buftabs-to-edit-files
+
+noremap fc <Esc>:call CleanClose(1)<CR>
+noremap fq <Esc>:call CleanClose(0)<CR>
+
+function! CleanClose(tosave)
+  if (a:tosave == 1)
+    w!
+  endif
+  let todelbufNr = bufnr("%")
+  let newbufNr = bufnr("#")
+  if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+    exe "b".newbufNr
+  else
+    bnext
+  endif
+
+  if (bufnr("%") == todelbufNr)
+    new
+  endif
+  exe "bd".todelbufNr
+endfunction
+
+" ------------------------------------
+
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
