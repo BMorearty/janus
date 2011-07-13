@@ -1,4 +1,3 @@
-
 if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
@@ -24,6 +23,8 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+
 
   " Command-][ to increase/decrease indentation
   vmap <D-]> >gv
@@ -65,6 +66,9 @@ if has("gui_macvim")
   map <Leader>= <C-w>=
   imap <Leader>= <Esc> <C-w>=
 endif
+
+" Don't beep
+set visualbell
 
 " Start without the toolbar
 set guioptions-=T
