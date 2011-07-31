@@ -171,6 +171,31 @@ function! CleanClose(tosave)
   exe "bd".todelbufNr
 endfunction
 
+" ------- BMorearty: from https://gist.github.com/1096346
+"
+" copy the entire buffer or selected text as RTF
+" inspired by https://github.com/dharanasoft/rtf-highlight
+" but only uses commands available by default on OS X.
+"
+" To set html conversion options, :help TOhtml
+" And, undocumented, to set the font used,
+" let g:html_font="Your Preferred Font"
+"
+function! CopyRTF(line1,line2)
+  if !executable('textutil')
+    echoerr "crap! textutil not found"
+    return
+  endif
+
+  call tohtml#Convert2HTML(a:line1, a:line2)
+  silent exe "%!textutil -convert rtf -stdin -stdout | pbcopy"
+  silent bd!
+
+  echomsg "RTF copied to clipboard"
+endfunction
+
+command! -range=% CopyRTF :call CopyRTF(<line1>,<line2>)
+
 " ------------------------------------
 
 " Include user's local vim config
