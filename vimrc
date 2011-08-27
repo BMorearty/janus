@@ -1,3 +1,9 @@
+" ------- BMorearty: use comma instead of backslash as the leader character
+
+let mapleader = ","
+
+" --------------------------------------------------------
+
 set nocompatible
 
 set number
@@ -196,7 +202,7 @@ endfunction
 
 command! -range=% CopyRTF :call CopyRTF(<line1>,<line2>)
 
-" ------------------------------------
+" --------------------------------------------------------
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
