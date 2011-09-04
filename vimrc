@@ -202,6 +202,8 @@ endfunction
 
 command! -range=% CopyRTF :call CopyRTF(<line1>,<line2>)
 
+" ------- BMorearty: bufexplorer
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
 " --------------------------------------------------------
 
 " Include user's local vim config
