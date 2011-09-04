@@ -1,7 +1,5 @@
 " ------- BMorearty: use comma instead of backslash as the leader character
-
 let mapleader = ","
-
 " --------------------------------------------------------
 
 set nocompatible
@@ -15,6 +13,7 @@ set encoding=utf-8
 
 " Whitespace stuff
 set nowrap
+" BMorearty
 set tabstop=8
 set shiftwidth=2
 set softtabstop=2
@@ -26,7 +25,11 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-nmap <silent> <C-N> :silent noh<CR>
+" BMorearty
+nmap <silent> <C-_> :silent noh<CR>
+nmap <silent> <C-n> :silent cn<CR>
+nmap <silent> <C-p> :silent cp<CR>
+autocmd QuickFixCmdPost *grep* cwindow
 
 " Tab completion
 set wildmode=list:longest,list:full
